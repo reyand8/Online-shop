@@ -4,7 +4,7 @@ import { loginUser } from "../../features/user/userSlice";
 
 import styles from "../../styles/User.module.css";
 
-const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
+const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
     const dispatch = useDispatch();
     const [values, setValues] = useState({
         email: "",
@@ -67,4 +67,4 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
     );
 };
 
-export default UserSignupForm;
+export default UserLoginForm;
