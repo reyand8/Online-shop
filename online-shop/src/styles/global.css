@@ -38,9 +38,11 @@ button {
   border: none;
   background: none;
   outline: none;
-  color: #fff;
   font-size: 16px;
   font-family: Montserrat, Roboto, sans-serif;
+}
+button {
+  color: #fff;
 }
 
 a {
