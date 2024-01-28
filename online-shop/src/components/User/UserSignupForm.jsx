@@ -10,7 +10,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
         name: "",
         email: "",
         password: "",
-        avatar: "",
+        avatar: "https://media.giphy.com/media/NSPRepE2PvAcg/giphy.gif",
     });
 
     const handleChange = ({ target: { value, name } }) => {
