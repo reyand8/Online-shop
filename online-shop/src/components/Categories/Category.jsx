@@ -107,7 +107,7 @@ const Category = () => {
                     />
                     <span>max price</span>
                 </div>
-                <button type="submit" hidden />
+                <button type='submit'>Search</button>
             </form>
             {isLoading ? (
                 <div className="preloader">Loading...</div>
