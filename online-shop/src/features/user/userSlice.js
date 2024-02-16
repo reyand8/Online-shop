@@ -55,12 +55,29 @@ const userSlice = createSlice({
     name: "user",
     initialState: {
         currentUser: null,
+        wishlist: [],
         basket: [],
         isLoading: false,
         formType: "signup",
         showForm: false,
     },
     reducers: {
+        addItemToWishlist: (state, { payload }) => {
+            let newWishlist = [...state.wishlist];
+            const found = state.wishlist.find(({ id }) => id === payload.id);
+            if (found) {
+                newWishlist = newWishlist.map((item) => {
+                    return item.id === payload.id
+                        ? { ...item, quantity: payload.quantity || item.quantity + 1 }
+                        : item;
+                });
+            } else newWishlist.push({ ...payload, quantity: 1 });
+
+            state.wishlist = newWishlist;
+        },
+        removeItemFromWishlist: (state, { payload }) => {
+            state.wishlist = state.wishlist.filter(({ id }) => id !== payload);
+        },
         addItemToBasket: (state, { payload }) => {
             let newBasket = [...state.basket];
             const found = state.basket.find(({ id }) => id === payload.id);
@@ -92,7 +109,8 @@ const userSlice = createSlice({
     },
 });
 
-export const { addItemToBasket, removeItemFromBasket, toggleForm, toggleFormType } =
+export const { addItemToWishlist, removeItemFromWishlist, addItemToBasket,
+    removeItemFromBasket, toggleForm, toggleFormType } =
     userSlice.actions;
 
 export default userSlice.reducer;
