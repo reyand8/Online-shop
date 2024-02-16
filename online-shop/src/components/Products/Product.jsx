@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {Link, useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 
 import { ROUTES } from "../../utils/routes";
 
 import styles from "../../styles/Product.module.css";
 
-import { addItemToBasket } from "../../features/user/userSlice";
+import { addItemToBasket, addItemToWishlist } from "../../features/user/userSlice";
 
 const SIZES = [3.5, 4, 4.5, 5];
 
 const Product = (item) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
+    const { currentUser } = useSelector(({ user }) => user);
     const { title, price, images, description } = item;
     const [currentImage, setCurrentImage] = useState();
     const [currentSize, setCurrentSize] = useState();
@@ -22,7 +24,20 @@ const Product = (item) => {
     }, [images]);
 
     const addToBasket = () => {
-        dispatch(addItemToBasket(item));
+        if (!currentUser) {
+            navigate('/profile')
+        } else {
+            dispatch(addItemToBasket(item));
+        }
+    };
+
+    const addToWishlist = () => {
+        if (!currentUser) {
+            navigate('/profile')
+        } else {
+            dispatch(addItemToWishlist(item));
+        }
+
     };
 
     return (
@@ -71,7 +86,10 @@ const Product = (item) => {
                         disabled={!currentSize}>
                         Add to cart
                     </button>
-                    <button className={styles.favourite}>Add to favourites</button>
+                    <button
+                        onClick={addToWishlist}
+                        disabled={!currentSize}
+                        className={styles.favourite}>Add to favourites</button>
                 </div>
                 <div className={styles.bottom}>
                     <div className={styles.purchase}>12 people purchased</div>
