@@ -87,7 +87,12 @@
 }
 
 .favourites {
+  position: relative;
   cursor: pointer;
+}
+
+.favourites span{
+  background: #d31212;
 }
 
 .account svg {
