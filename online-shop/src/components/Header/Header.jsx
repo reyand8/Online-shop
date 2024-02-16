@@ -16,7 +16,7 @@ const Header = () => {
 
     const [searchValue, setSearchValue] = useState("");
     const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
-    const { currentUser, basket } = useSelector(({ user }) => user);
+    const { currentUser, basket, wishlist } = useSelector(({ user }) => user);
     const { data, isLoading } = useGetProductsQuery({ title: searchValue });
 
     useEffect(() => {
@@ -84,6 +84,9 @@ const Header = () => {
                         <svg className={styles["icon-fav"]}>
                             <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`}/>
                         </svg>
+                        {!!wishlist.length && (
+                            <span className={styles.count }>{wishlist.length}</span>
+                        )}
                     </Link>
                     <Link to={ROUTES.BASKET} className={styles.cart}>
                         <svg className={styles["icon-cart"]}>
