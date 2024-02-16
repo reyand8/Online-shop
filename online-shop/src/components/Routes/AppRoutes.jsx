@@ -8,6 +8,7 @@ import SingleProduct from "../Products/SingleProduct";
 import Profile from "../Profile/Profile";
 import SingleCategory from "../Categories/SingleCategory";
 import Basket from "../Basket/Basket";
+import Wishlist from "../Wishlist/Wishlist";
 
 const AppRoutes = () => (
     <Routes>
@@ -16,6 +17,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.PROFILE} element={<Profile />} />
         <Route path={ROUTES.CATEGORY} element={<SingleCategory />} />
         <Route path={ROUTES.BASKET} element={<Basket />} />
+        <Route path={ROUTES.WISHLIST} element={<Wishlist />} />
     </Routes>
 );
 
