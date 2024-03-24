@@ -37,7 +37,6 @@ const Product = (item) => {
         } else {
             dispatch(addItemToWishlist(item));
         }
-
     };
 
     return (

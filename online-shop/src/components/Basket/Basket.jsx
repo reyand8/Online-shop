@@ -84,8 +84,8 @@ const Basket = () => {
                         <div className={styles.total}>
                             TOTAL PRICE:{" "}
                             <span>
-                {sumBy(basket.map(({ quantity, price }) => quantity * price))}$
-              </span>
+                                {sumBy(basket.map(({ quantity, price }) => quantity * price))}$
+                            </span>
                         </div>
                         <button className={styles.proceed}>Proceed to checkout</button>
                     </div>

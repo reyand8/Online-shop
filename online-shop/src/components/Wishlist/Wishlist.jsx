@@ -89,7 +89,7 @@ const Wishlist = () => {
                 {sumBy(wishlist.map(({ quantity, price }) => quantity * price))}$
               </span>
                         </div>
-                        <button className={styles.proceed}>Proceed to checkout</button>
+                        <button className={styles.proceed}>Add to basket</button>
                     </div>
                 </>
             )}

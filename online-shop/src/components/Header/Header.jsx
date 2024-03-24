@@ -13,11 +13,11 @@ import { toggleForm } from "../../features/user/userSlice";
 const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
     const [searchValue, setSearchValue] = useState("");
     const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
     const { currentUser, basket, wishlist } = useSelector(({ user }) => user);
     const { data, isLoading } = useGetProductsQuery({ title: searchValue });
+
 
     useEffect(() => {
         if (!currentUser) return;
