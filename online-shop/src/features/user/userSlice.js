@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import { BASE_URL } from "../../utils/constants";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { BASE_URL } from '../../utils/constants';
 
 export const createUser = createAsyncThunk(
-    "users/createUser",
+    'users/createUser',
     async (payload, thunkAPI) => {
         try {
             const res = await axios.post(`${BASE_URL}/users`, payload);
@@ -16,7 +16,7 @@ export const createUser = createAsyncThunk(
 );
 
 export const loginUser = createAsyncThunk(
-    "users/loginUser",
+    'users/loginUser',
     async (payload, thunkAPI) => {
         try {
             const res = await axios.post(`${BASE_URL}/auth/login`, payload);
@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk(
 );
 
 export const updateUser = createAsyncThunk(
-    "users/updateUser",
+    'users/updateUser',
     async (payload, thunkAPI) => {
         try {
             const res = await axios.put(`${BASE_URL}/users/${payload.id}`, payload);
@@ -52,13 +52,13 @@ const addCurrentUser = (state, { payload }) => {
 };
 
 const userSlice = createSlice({
-    name: "user",
+    name: 'user',
     initialState: {
         currentUser: null,
         wishlist: [],
         basket: [],
         isLoading: false,
-        formType: "signup",
+        formType: 'signup',
         showForm: false,
     },
     reducers: {

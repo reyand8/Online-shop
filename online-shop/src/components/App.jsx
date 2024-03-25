@@ -1,14 +1,14 @@
-import React, {useEffect} from "react"
-import {useDispatch} from "react-redux";
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 
-import AppRoutes from "./Routes/AppRoutes";
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
-import Sidebar from "./Sidebar/Sidebar";
-import UserForm from "./User/UserForm";
+import AppRoutes from './Routes/AppRoutes';
+import Header from './Header/Header.jsx';
+import Footer from './Footer/Footer';
+import Sidebar from './Sidebar/Sidebar';
+import UserForm from './User/UserForm';
 
-import {getCategories} from "../features/categories/categoriesSlice";
-import {getProducts} from "../features/products/productsSlice";
+import {getCategories} from '../features/categories/categoriesSlice';
+import {getProducts} from '../features/products/productsSlice';
 
 
 const App = () => {

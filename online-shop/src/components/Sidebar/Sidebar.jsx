@@ -1,11 +1,11 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
-import {useSelector} from "react-redux";
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
-import styles from "../../styles/Sidebar.module.css"
+import styles from '../../styles/Sidebar.module.css';
 
 const Sidebar = () => {
-    const { list } = useSelector(({categories}) => categories)
+    const { list } = useSelector(({categories}) => categories);
     return (
         <section className={styles.sidebar}>
             <div className={styles.title}>
@@ -16,7 +16,7 @@ const Sidebar = () => {
                     {list.map(({id, name}) => (
                         <li key={id}>
                             <NavLink className={({ isActive }) =>
-                                    `${styles.link} ${isActive ? styles.active : ""}`}
+                                    `${styles.link} ${isActive ? styles.active : ''}`}
                                 to={`/categories/${id}`}>
                                 {name}
                             </NavLink>
@@ -31,12 +31,12 @@ const Sidebar = () => {
                 <a href="/terms"
                    target="_blank"
                    className={styles.link}
-                   style={{textDecoration: "underline"}}>
+                   style={{textDecoration: 'underline'}}>
                     Terms & Conditions
                 </a>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Sidebar;

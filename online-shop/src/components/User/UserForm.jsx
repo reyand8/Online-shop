@@ -1,11 +1,11 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import UserSignupForm from "./UserSignupForm";
-import UserLoginForm from "./UserLoginForm";
+import UserSignupForm from './UserSignupForm';
+import UserLoginForm from './UserLoginForm';
 
-import styles from "../../styles/User.module.css";
-import { toggleForm, toggleFormType } from "../../features/user/userSlice";
+import styles from '../../styles/User.module.css';
+import { toggleForm, toggleFormType } from '../../features/user/userSlice';
 
 const UserForm = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const UserForm = () => {
     return showForm ? (
         <>
             <div className={styles.overlay} onClick={closeForm} />
-            {formType === "signup" ? (
+            {formType === 'signup' ? (
                 <UserSignupForm
                     toggleCurrentFormType={toggleCurrentFormType}
                     closeForm={closeForm}

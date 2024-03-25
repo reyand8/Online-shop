@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createUser } from "../../features/user/userSlice";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../features/user/userSlice';
 
-import styles from "../../styles/User.module.css";
+import styles from '../../styles/User.module.css';
 
 const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
     const dispatch = useDispatch();
     const [values, setValues] = useState({
-        name: "",
-        email: "",
-        password: "",
-        avatar: "https://media.giphy.com/media/NSPRepE2PvAcg/giphy.gif",
+        name: '',
+        email: '',
+        password: '',
+        avatar: 'https://media.giphy.com/media/NSPRepE2PvAcg/giphy.gif',
     });
 
     const handleChange = ({ target: { value, name } }) => {
@@ -80,7 +80,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
                 </div>
                 <div
                     className={styles.link}
-                    onClick={() => toggleCurrentFormType("login")}>
+                    onClick={() => toggleCurrentFormType('login')}>
                     I already have an account
                 </div>
                 <button type="submit" className={styles.submit}>

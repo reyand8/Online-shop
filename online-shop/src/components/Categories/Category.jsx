@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import { useGetProductsQuery } from "../../features/api/apiSlice";
+import { useGetProductsQuery } from '../../features/api/apiSlice';
 
-import styles from "../../styles/Category.module.css";
+import styles from '../../styles/Category.module.css';
 
-import Products from "../Products/Products";
+import Products from '../Products/Products';
 
 const Category = () => {
     const { id } = useParams();
     const { list } = useSelector(({ categories }) => categories);
 
     const defaultValues = {
-        title: "",
+        title: '',
         price_min: 0,
         price_max: 0,
     };
@@ -107,7 +107,7 @@ const Category = () => {
                     />
                     <span>max price</span>
                 </div>
-                <button type='submit'>Search</button>
+                <button type="submit">Search</button>
             </form>
             {isLoading ? (
                 <div className="preloader">Loading...</div>

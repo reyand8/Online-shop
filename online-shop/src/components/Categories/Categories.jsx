@@ -1,7 +1,7 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-import styles from "../../styles/Categories.module.css"
+import styles from '../../styles/Categories.module.css';
 
 const Categories = ({ title, products = [], amount }) => {
     const list = products.filter((_, i) => i < amount);

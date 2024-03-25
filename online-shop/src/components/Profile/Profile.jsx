@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { updateUser } from "../../features/user/userSlice";
+import { updateUser } from '../../features/user/userSlice';
 
-import styles from "../../styles/Profile.module.css";
+import styles from '../../styles/Profile.module.css';
 
 const Profile = () => {
     const dispatch = useDispatch();
     const { currentUser } = useSelector(({ user }) => user);
     const [values, setValues] = useState({
-        name: "",
-        email: "",
-        password: "",
-        avatar: "",
+        name: '',
+        email: '',
+        password: '',
+        avatar: '',
     });
 
     useEffect(() => {

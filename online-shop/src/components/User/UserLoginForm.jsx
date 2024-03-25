@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { loginUser } from "../../features/user/userSlice";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../features/user/userSlice';
 
-import styles from "../../styles/User.module.css";
+import styles from '../../styles/User.module.css';
 
 const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
     const dispatch = useDispatch();
     const [values, setValues] = useState({
-        email: "",
-        password: "",
+        email: '',
+        password: '',
     });
 
     const handleChange = ({ target: { value, name } }) => {
@@ -55,7 +55,7 @@ const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
                     />
                 </div>
                 <div
-                    onClick={() => toggleCurrentFormType("signup")}
+                    onClick={() => toggleCurrentFormType('signup')}
                     className={styles.link}>
                     Create an account
                 </div>

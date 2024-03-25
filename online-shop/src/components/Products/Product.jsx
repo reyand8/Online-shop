@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import {Link, useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect, useState } from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
-import { ROUTES } from "../../utils/routes";
+import { ROUTES } from '../../utils/routes';
 
-import styles from "../../styles/Product.module.css";
+import styles from '../../styles/Product.module.css';
 
-import { addItemToBasket, addItemToWishlist } from "../../features/user/userSlice";
+import { addItemToBasket, addItemToWishlist } from '../../features/user/userSlice';
 
 const SIZES = [3.5, 4, 4.5, 5];
 
 const Product = (item) => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const { currentUser } = useSelector(({ user }) => user);
     const { title, price, images, description } = item;
     const [currentImage, setCurrentImage] = useState();
@@ -25,7 +25,7 @@ const Product = (item) => {
 
     const addToBasket = () => {
         if (!currentUser) {
-            navigate('/profile')
+            navigate('/profile');
         } else {
             dispatch(addItemToBasket(item));
         }
@@ -33,7 +33,7 @@ const Product = (item) => {
 
     const addToWishlist = () => {
         if (!currentUser) {
-            navigate('/profile')
+            navigate('/profile');
         } else {
             dispatch(addItemToWishlist(item));
         }
@@ -46,7 +46,7 @@ const Product = (item) => {
                     className={styles.current}
                     style={{ backgroundImage: `url(${currentImage})` }}
                 />
-                <div className={styles["images-list"]}>
+                <div className={styles['images-list']}>
                     {images.map((image, i) => (
                         <div
                             key={i}
@@ -70,7 +70,7 @@ const Product = (item) => {
                             <div
                                 onClick={() => setCurrentSize(size)}
                                 className={`${styles.size} ${
-                                    currentSize === size ? styles.active : ""}`}
+                                    currentSize === size ? styles.active : ''}`}
                                 key={size}>
                                 {size}
                             </div>

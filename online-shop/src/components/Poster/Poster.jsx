@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import styles from '../../styles/Home.module.css'
-import BG from '../../images/computer.png'
+import styles from '../../styles/Home.module.css';
+import BG from '../../images/computer.png';
 
 const Poster = () => (
     <section className={styles.home}>
@@ -19,6 +19,6 @@ const Poster = () => (
             </div>
         </div>
     </section>
-)
+);
 
-export default Poster
+export default Poster;
