@@ -24,9 +24,18 @@
   border-radius: 8px;
   background: var(--bg);
   width: 100%;
-  padding: 12px 16px;
+  padding: 4px 16px;
   display: grid;
-  grid-template-columns: 100px 2fr 1fr 1.5fr 1fr 16px;
+  grid-template-columns: 2.5fr 1.5fr 1fr 16px;
+  align-items: center;
+  height: 85px;
+}
+
+.item_link {
+  width: 100%;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 125px 2fr 1.5fr;
   align-items: center;
   height: 70px;
 }
