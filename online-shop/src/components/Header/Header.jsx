@@ -1,20 +1,21 @@
-import React, {useEffect, useState} from "react"
-import {Link, useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import React, {useEffect, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
-import styles from '../../styles/Header.module.css'
-import LOGO from '../../images/logo.png'
-import AVATAR from '../../images/avatar.svg'
+import styles from '../../styles/Header.module.css';
+import LOGO from '../../images/logo.png';
+import AVATAR from '../../images/avatar.svg';
+import sprite from '../../images/sprite.svg';
 
-import {ROUTES} from "../../utils/routes";
-import {useGetProductsQuery} from "../../features/api/apiSlice";
-import { toggleForm } from "../../features/user/userSlice";
+import {ROUTES} from '../../utils/routes';
+import {useGetProductsQuery} from '../../features/api/apiSlice';
+import { toggleForm } from '../../features/user/userSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [searchValue, setSearchValue] = useState("");
-    const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
+    const [searchValue, setSearchValue] = useState('');
+    const [values, setValues] = useState({ name: 'Guest', avatar: AVATAR });
     const { currentUser, basket, wishlist } = useSelector(({ user }) => user);
     const { data, isLoading } = useGetProductsQuery({ title: searchValue });
 
@@ -45,7 +46,7 @@ const Header = () => {
                 <form className={styles.form}>
                     <div className={styles.icon}>
                         <svg className="icon">
-                            <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#search`}/>
+                            <use xlinkHref={sprite + '#search'}/>
                         </svg>
                     </div>
                     <div className={styles.input}>
@@ -60,12 +61,12 @@ const Header = () => {
                     </div>
                     {searchValue && (
                         <div className={styles.box}>
-                            {isLoading ? "Loading" : !data.length ? "No results"
+                            {isLoading ? 'Loading' : !data.length ? 'No results'
                                 : data.map(({ title, images, id }) => {
                                     return (
                                         <Link
                                             key={id}
-                                            onClick={() => setSearchValue("")}
+                                            onClick={() => setSearchValue('')}
                                             className={styles.item}
                                             to={`/products/${id}`}>
                                             <div
@@ -81,16 +82,16 @@ const Header = () => {
                 </form>
                 <div className={styles.account}>
                     <Link to={ROUTES.WISHLIST} className={styles.favourites}>
-                        <svg className={styles["icon-fav"]}>
-                            <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`}/>
+                        <svg className={styles['icon-fav']}>
+                            <use xlinkHref={sprite + '#heart'}/>
                         </svg>
                         {!!wishlist.length && (
                             <span className={styles.count }>{wishlist.length}</span>
                         )}
                     </Link>
                     <Link to={ROUTES.BASKET} className={styles.cart}>
-                        <svg className={styles["icon-cart"]}>
-                            <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#bag`} />
+                        <svg className={styles['icon-cart']}>
+                            <use xlinkHref={sprite + '#bag'}/>
                         </svg>
                         {!!basket.length && (
                             <span className={styles.count}>{basket.length}</span>
@@ -104,7 +105,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Header;
