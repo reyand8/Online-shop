@@ -22,7 +22,7 @@ const Home = () => {
         <>
             <Poster />
             <Products products={list} amount={50} title="Trending" />
-            <Categories products={categories.list} amount={5} title="Worth seeing" />
+            <Categories products={categories.list} amount={5} title="You might like this" />
             <Banner />
             <Products products={filtered} amount={5} title="Less than 100$" />
         </>
