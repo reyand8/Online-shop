@@ -93,6 +93,7 @@ const Category = () => {
                         name="price_min"
                         onChange={handleChange}
                         placeholder="0"
+                        data-testid="price_min_input"
                         value={values.price_min}
                     />
                     <span>min price</span>
@@ -103,6 +104,7 @@ const Category = () => {
                         name="price_max"
                         onChange={handleChange}
                         placeholder="0"
+                        data-testid="price_max_input"
                         value={values.price_max}
                     />
                     <span>max price</span>
@@ -129,7 +131,7 @@ const Category = () => {
                     <button
                         onClick={() =>
                             setParams({ ...params, offset: params.offset + params.limit })
-                        }>
+                        }  data-testid="see_more_button">
                         See more
                     </button>
                 </div>
